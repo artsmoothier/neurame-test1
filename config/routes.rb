@@ -1,6 +1,6 @@
 Neurame1::Application.routes.draw do
   root "gallery#posts"
-  get "gallery/posts_category"
+  get "/:category" => 'gallery#posts_category'
   get "gallery/show"
   get "gallery/write"
   get "gallery/write_complete"

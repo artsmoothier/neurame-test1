@@ -4,6 +4,13 @@ class GalleryController < ApplicationController
   end
 
   def posts_category
+	case params[:category]
+	when "Charged"
+		@category = "Charged"
+	else 
+		@category = "Free"
+	end
+	@posts = Post.where(category: @category)
   end
 
   def show
