@@ -1,2 +1,14 @@
-<h1>Gallery#edit</h1>
-<p>Find me in app/views/gallery/edit.html.erb</p>
+<p><%= flash[:alert] %></p>
+<h2>게시글 수정하기</h2>
+
+<form action="/gallery/edit_complete" method="post">
+  <input type="hidden" name="id" value="<%= @post.id %>">
+  <p style="color: #ff0000">분류:
+  <select name="post_category">
+    <option value="Charged">Charged</option>
+    <option value="Free">Free</option>
+  </select></p>
+  <p>Title: <input type="text" name="post_title" value="<%= @post.title %>"></p>
+  <p>Content: <textarea name="post_content"><%= @post.content %></textarea></p>
+  <input type="submit" value="Modify">
+</form>
