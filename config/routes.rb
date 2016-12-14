@@ -6,7 +6,7 @@ Neurame1::Application.routes.draw do
   post "gallery/write_complete"
   get "gallery/edit/:id" => 'gallery#edit'
   post "gallery/edit_complete"
-  get "gallery/delete_complete"
+  get "gallery/delete_complete/:id" => 'gallery#delete_complete'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

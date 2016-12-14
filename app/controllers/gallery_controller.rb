@@ -53,5 +53,9 @@ class GalleryController < ApplicationController
   end
 
   def delete_complete
+	post = Post.find(params[:id])
+	post.destroy
+	flash[:alert]="Delete complete!"
+	redirect_to "/"
   end
 end
