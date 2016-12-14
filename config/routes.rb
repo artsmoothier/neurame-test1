@@ -3,7 +3,7 @@ Neurame1::Application.routes.draw do
   get "/:category" => 'gallery#posts_category'
   get "gallery/show/:id" => 'gallery#show'
   get "gallery/write"
-  get "gallery/write_complete"
+  post "gallery/write_complete"
   get "gallery/edit"
   get "gallery/edit_complete"
   get "gallery/delete_complete"

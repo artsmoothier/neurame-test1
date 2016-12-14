@@ -1,2 +1,13 @@
-<h1>Gallery#write</h1>
-<p>Find me in app/views/gallery/write.html.erb</p>
+<p><%= flash[:alert] %></p>
+<h2>그림 추가하기</h2>
+
+<form action="/gallery/write_complete" method="post">
+  <p style="color: #ff0000">분류:
+  <select name="post_category">
+    <option value="Charged">Charged</option>
+    <option value="Free">Free</option>    
+  </select></p>
+  <p>Title: <input type="text" name="post_title" placeholder="제목을 입력하세요."></p>
+  <p>Content: <textarea name="post_content" placeholder="내용을 입력하세요."></textarea></p>
+  <input type="submit" value="추가하기">
+</form>
