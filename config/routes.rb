@@ -1,4 +1,12 @@
 Neurame1::Application.routes.draw do
+  root "gallery#posts"
+  get "gallery/posts_category"
+  get "gallery/show"
+  get "gallery/write"
+  get "gallery/write_complete"
+  get "gallery/edit"
+  get "gallery/edit_complete"
+  get "gallery/delete_complete"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
