@@ -1,1 +1,7 @@
-<h3><a  href="/">Neurame Gallery</a> | <a href="/Charged">Charged</a> | <a href="/Free">Free </a> | <a href="/gallery/write">Write</a> || <a href = "users/signup">Sign up</a> | <a href ="/users/login">로그인</a></h3> 
+<h3><a  href="/">Neurame Gallery</a> | <a href="/Charged">Charged</a> | <a href="/Free">Free </a> | <a href="/gallery/write">Write</a> ||
+<% if session[:user_id].nil?%>
+<a href = "/users/signup">Sign up</a> | <a href = "/users/login">Log in</a>
+<% else %>
+<a href = "/users/logout_complete">Log out </a>
+<% end %>
+</h3>
