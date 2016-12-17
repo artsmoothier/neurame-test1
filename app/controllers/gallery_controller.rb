@@ -58,4 +58,19 @@ class GalleryController < ApplicationController
 	flash[:alert]="Delete complete!"
 	redirect_to "/"
   end
+  def write_comment_complete
+	comment = Comment.new
+	comment.post_id = params[:post_id]
+	comment.content = params[:comment_content]
+	comment.save
+
+	flash[:alert] = "New comment save"
+	redirect_to "/gallery/show/#{comment.post_id}"
+  end
+  def delete_comment_complete
+	comment = Comment.find(params[:id])
+	comment.destroy
+	flash[:alert]="Delete comment complete!"
+	redirect_to "/gallery/show/#{comment.post_id}"
+  end
 end

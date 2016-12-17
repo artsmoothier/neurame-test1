@@ -1,4 +1,9 @@
 Neurame1::Application.routes.draw do
+  get "users/signup"
+  post "users/signup_complete"
+  get "users/login"
+  get "users/login_complete"
+  get "users/logout_complete"
   root "gallery#posts"
   get "/:category" => 'gallery#posts_category'
   get "gallery/show/:id" => 'gallery#show'
@@ -7,7 +12,9 @@ Neurame1::Application.routes.draw do
   get "gallery/edit/:id" => 'gallery#edit'
   post "gallery/edit_complete"
   get "gallery/delete_complete/:id" => 'gallery#delete_complete'
-  # The priority is based upon order of creation: first created -> highest priority.
+  post 'gallery/write_comment_complete'
+  get "gallery/delete_comment_complete/:id" => 'gallery#delete_comment_complete'
+# The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
