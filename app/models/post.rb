@@ -4,4 +4,5 @@ class Post < ActiveRecord::Base
 	has_many	:comments
 	validates	:category, :inclusion => {:in => ["Charged","Free"], :message => "Choice category"}
 	validates	:title, :presence => {:message => "제목을 반드시 입력해주세요"}
+	mount_uploader	:image,	ImageUploader
 end

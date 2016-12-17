@@ -9,7 +9,7 @@
 u = User.new
 u.username = "neurame"
 u.email = "neurame@gmail.com"
-u.password = "0921"
+u.password = "neurame!!"
 u.save
 
 
