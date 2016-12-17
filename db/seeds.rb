@@ -6,16 +6,28 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+u = User.new
+u.username = "neurame"
+u.email = "neurame@gmail.com"
+u.password = "0921"
+u.save
 
-categories = ["Charged","Free"]
 
-categories.each do |category|
-  0.upto(1) do |i|
-    p = Post.new
-    p.user_id = i + 1
-    p.category = category
-    p.title = "#{category} pictures #{i} 이름"
-    p.content = "#{category} pictures#{i} 설명"
-    p.save
-  end
-end
+u = User.new
+u.username = "easy00"
+u.email = "leejy930924@gmail.com"
+u.password = "qawsed12"
+u.save
+
+#categories = ["Charged","Free"]
+
+#categories.each do |category|
+#  0.upto(1) do |i|
+#    p = Post.new
+#    p.user_id = i + 1
+#    p.category = category
+#    p.title = "#{category} pictures #{i} 이름"
+#    p.content = "#{category} pictures#{i} 설명"
+#    p.save
+#  end
+#end
