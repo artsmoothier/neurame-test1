@@ -42,6 +42,10 @@ class GalleryController < ApplicationController
 
   def edit
 	@post = Post.find(params[:id])
+	if @post.user_id != session[:user_id]
+		flash[:alert] = "수정 권한이 없습니다."
+		redirect_to	:back
+	end
   end
 
   def edit_complete
@@ -60,9 +64,14 @@ class GalleryController < ApplicationController
 
   def delete_complete
 	post = Post.find(params[:id])
-	post.destroy
-	flash[:alert]="Delete complete!"
-	redirect_to "/"
+	if post.user_id == session[:user_id]
+		post.destroy
+		flash[:alert]="Delete complete!"
+		redirect_to "/"
+	else
+		flash[:alert] = "삭제 권한이 없습니다."
+		redirect_to :back
+	end
   end
   def write_comment_complete
 	comment = Comment.new
@@ -76,8 +85,13 @@ class GalleryController < ApplicationController
   end
   def delete_comment_complete
 	comment = Comment.find(params[:id])
-	comment.destroy
-	flash[:alert]="Delete comment complete!"
-	redirect_to "/gallery/show/#{comment.post_id}"
+	if comment.user_id == session[:user_id]
+		comment.destroy
+		flash[:alert]="Delete comment complete!"
+		redirect_to "/gallery/show/#{comment.post_id}"
+	else
+		flash[:alert] = "해당 댓글의 삭제 권한이 없습니다."
+		redirect_to	:back
+	end
   end
 end
