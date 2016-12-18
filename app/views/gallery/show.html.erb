@@ -1,22 +1,37 @@
-<p><%= flash[:alert] %></p>
-<h2>Pictures</h2>
-
-<div style="border: 1px solid #ffffff">
-  <p><img src= " <%= @post.image_url(:medium)%>"></p>
-  <h4>제목: <%= @post.title %></h4>
-  <p style="color: #ff0000">분류: <%= @post.category %></p>
-  <p>내용: <%= @post.content %></p>
-
-  <p><a href = "/gallery/edit/<%= @post.id %>">Modify</a> | <a href="/gallery/delete_complete/<%=@post.id%>">Delete</a></p>
-	<hr>
-	<% @post.comments.each do |comment| %>
-	<p><strong><%= comment.user.username%></strong> <%= comment.content %> </p> | <a href ="/gallery/delete_comment_complete/<%=comment.id%>"> Delete </a></p>
+<div class = "container">
+	<% if !flash[:alert].nil? %>
+	<div class = "alert alert-danger">
+		<%= flash[:alert] %>
+	</div>
 	<% end %>
-  <form action = "/gallery/write_comment_complete" method="post">
-		<input type="hidden" name = "post_id" value = "<%= @post.id%>">
-		<% if !@comment_writer.nil? %>
-		<p><strong><%= @comment_writer.username%></strong><input type = "text" name = "comment_content" placeholder = "Comment here"> <input type ="submit" value="save"></p>
-		<% end %>
-	</form>
-  <p><a href="/">전체 리스트 가기</a></p>
+
+
+	<h2 class = "text-center"> Pictures </h2>
+	<div class = "row">
+		<div class = "col-md-1">
+		</div>
+		<div class = "col-md-5 text-right">
+			<img src= " <%= @post.image_url(:medium)%>">
+		</div>
+		<div class = "col-md-5">
+			<h4>+ <%= @post.title %></h4>
+			<p><span class = "label label-warning"><%= @post.category %></span></p>
+			<p><%= @post.content %></p>
+			
+			<p><a href = "/gallery/edit/<%= @post.id %>">Modify</a> | <a href="/gallery/delete_complete/<%=@post.id%>">Delete</a></p>
+			<hr />
+			<% @post.comments.each do |comment| %>
+				<p><strong><%= comment.user.username%></strong> <%= comment.content %> </p> | <a href ="/gallery/delete_comment_complete/<%=comment.id%>"> Delete </a></p>
+			<% end %>
+			
+			<form class = "text-left" action = "/gallery/write_comment_complete" method="post">
+				<input type="hidden" name = "post_id" value = "<%= @post.id%>">
+				<% if !@comment_writer.nil? %>
+				<p><strong><%= @comment_writer.username%></strong><input type = "text" name = "comment_content" placeholder = "Comment here"> <input type ="submit" value="save"></p>
+				<% end %>
+			</form>
+		</div>
+		<div class = "col-md-1">
+		</div>
+	</div>
 </div>
