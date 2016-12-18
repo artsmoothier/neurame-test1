@@ -26,3 +26,25 @@
 	color: #ee3b53;
 	text-decoration: none;
  }
+
+
+ .form-heading {
+  margin: 35px 0px 20px 0px;
+}
+
+.form-input {
+  width: 100%;
+  height: 40px;
+  border: 1.5px solid #cccccc;
+  border-radius: 6px;
+  padding: 0px 0px 0px 10px;
+}
+
+.form-textarea {
+  width: 100%;
+  height: 100px;
+  border: 1.5px solid #cccccc;
+  border-radius: 6px;
+  padding: 10px 0px 0px 10px;
+}
+
