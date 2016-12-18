@@ -1,7 +1,9 @@
-<div>
-  <h2><%= @category %> List </h2>
+<div class="container">
+	<div class="panel panel-default">
+		<div class= "panel-heading">
+			<h3 class="panel-title"> <%=@category%> List </h3>
+		</div>
+	</div>
+
+	<%= render :partial => "gallery/posts" %>
 </div>
-
-<hr>
-
-<%= render :partial => "gallery/posts" %>
