@@ -5,7 +5,27 @@
 		<%= flash[:alert]%>
 	</div>
 	<% end %>
-
+	<div>
+		<form action="/smoothie/mix_upload" method="post" enctype="multipart/form-data" oninput = "x.value=parseInt(range.value)">
+			<div class="container">
+				<div class = "row">
+					<div class = "col-md-1"></div>
+					<div class = "col-md-1">0</div>
+					<div class = "col-md-4">
+						<input type = "range" id = "range" value="50" style="width:200px;">
+					</div>
+					<div class = "col-md-1">100</div>
+					<div class = "col-md-1">						
+						<output name = "x" for="a"></output>
+					</div>
+					<div class = "col-md-1"></div>
+				</div>
+			</div>
+				<p>+ 사진 업로드</p>
+				<p><input type="file" name="image"></p>
+				<input class = "btn btn-lg btn-block" type="submit" value="추가하기">
+			</form>
+	</div>
 	<div style = "width: 700px; align:left">
 		<% @posts.reverse.each do |post| %>
 		<div class = "panel">
