@@ -1,10 +1,12 @@
 Neurame1::Application.routes.draw do
+  get "smoothie/mix"
+  root "index#indexin"
   get "users/signup"
   post "users/signup_complete"
   get "users/login"
   post "users/login_complete"
   get "users/logout_complete"
-  root "gallery#posts"
+  get "gallery/posts"
   get "/:category" => 'gallery#posts_category'
   get "gallery/show/:id" => 'gallery#show'
   get "gallery/write"

@@ -1,0 +1,16 @@
+<div class="container">
+	<h1 class="neurame1-title"><a class="neurame1-title-link" href="/"> Neurame</a></h1>
+</div>
+
+<nav class = "navbar navbar-default" role = "navigation">
+	<div class= "container">
+		<ul class = "nav navbar-nav navbar-right">
+			<% if session[:user_id].nil? %>
+			<li><a href = "/users/signup">Sign up</a></li>
+			<li><a href = "/users/login">Login</a></li>
+			<% else %>
+			<li><a href = "/users/logout_complete">Logout</a></li>
+			<% end %>
+		</ul>
+	</div>
+</nav>
