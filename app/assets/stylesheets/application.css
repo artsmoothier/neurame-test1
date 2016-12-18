@@ -11,3 +11,18 @@
  *= require_self
  *= require_tree .
  */
+
+ .neurame1-title{
+	height: 120px;
+	padding: 50px 0px 0px 0px;
+	text-align: center;
+ }
+
+ a.neurame1-title-link{
+	color: #a3293d;
+ }
+
+ a.neurame1-title-link:hover {
+	color: #ee3b53;
+	text-decoration: none;
+ }
