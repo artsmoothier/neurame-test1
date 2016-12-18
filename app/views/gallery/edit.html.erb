@@ -1,14 +1,30 @@
-<p><%= flash[:alert] %></p>
-<h2>게시글 수정하기</h2>
+<div class = "container">
+	<% if !flash[:alert].nil?  %>
+	<div class = "alert alert-danger">
+		<%= flash[:alert] %>
+	</div>
+	<% end %>
 
-<form action="/gallery/edit_complete" method="post">
-  <input type="hidden" name="id" value="<%= @post.id %>">
-  <p style="color: #ff0000">분류:
-  <select name="post_category">
-    <option value="Charged">Charged</option>
-    <option value="Free">Free</option>
-  </select></p>
-  <p>Title: <input type="text" name="post_title" value="<%= @post.title %>"></p>
-  <p>Content: <textarea name="post_content"><%= @post.content %></textarea></p>
-  <input type="submit" value="Modify">
-</form>
+	<div class = "row">
+		<div class = "col-md-4">
+		</div>
+		<div class = "col-md-4 text-center">
+			<h2 class = "form-heading">게시글 수정하기</h2>
+
+
+			<form action="/gallery/edit_complete" method="post">
+				<input type="hidden" name="id" value="<%= @post.id %>">
+				<p>+ 분류
+				<select name="post_category">
+					<option value="Charged">Charged</option>
+					<option value="Free">Free</option>
+				</select></p>
+				<p><input class = "form-input" type="text" name="post_title" value="<%= @post.title %>"></p>
+				<p><textarea class = "form-textarea" name="post_content"><%= @post.content %></textarea></p>
+				<input class = "btn btn-lg btn-block" type="submit" value="Modify">
+			</form>
+		</div>
+		<div class = "col-md-4">
+		</div>
+	</div>
+</div>
