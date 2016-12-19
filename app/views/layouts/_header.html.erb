@@ -1,27 +1,19 @@
-<nav class = "navbar navbar-default" role = "navigation">
-	<div class= "container">
-		<ul class = "nav navbar-nav navbar-right">
-			
-			<li><a href = "/gallery/posts">Art</a></li>
-			<li><a href = "/smoothie/mix">Smoothie</a></li>
-			
-		</ul>
-	</div>
-</nav>
-
-
-
-<div class="container">
-	<h1 class="neurame1-title"><a class="neurame1-title-link" href="/"> Neurame </a></h1>
-</div>
-
-<nav class = "navbar navbar-default" role = "navigation">
+<nav class = "navbar navbar-inverse" role = "navigation">
 	<div class= "container">
 		<ul class = "nav navbar-nav navbar-left">
-			<li><a href = "/Charged">Charged</a></li>
-			<li><a href = "/Free">Free</a></li>
-			<li><a href = "/gallery/write">Write </a></li>
+			<li><a href = "/">Neurame</a></li>
+			<li class = "dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  href = "#">Art<span class="caret"></span></a>
+				<ul class = "dropdown-menu">
+					<li><a href = "/gallery/posts">All</a></li>
+					<li><a href = "/Charged">Charged</a></li>
+					<li><a href = "/Free">Free</a></li>
+					<li><a href = "/gallery/write">Write</a></li>
+				</ul>
+			</li>
+			<li><a href = "/smoothie/mix">Smoothie</a></li>
+
 		</ul>
+
 		<ul class = "nav navbar-nav navbar-right">
 			<% if session[:user_id].nil? %>
 			<li><a href = "/users/signup">Sign up</a></li>
@@ -30,5 +22,12 @@
 			<li><a href = "/users/logout_complete">Logout</a></li>
 			<% end %>
 		</ul>
+
 	</div>
 </nav>
+
+
+
+<!--div class="container">
+	<h1 class="neurame1-title"><a class="neurame1-title-link" href="/"> Neurame </a></h1>
+</div-->
